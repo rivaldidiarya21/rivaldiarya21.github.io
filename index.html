@@ -1,0 +1,203 @@
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+// Show filtered elements
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+function test(){
+   alert("Hi");
+}
+
+window.onload = function(){
+  document.getElementById('bt').click();
+  
+var scriptTag = document.createElement("script");
+scriptTag.src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js";
+document.getElementsByTagName("head")[0].appendChild(scriptTag);
+}
+
+// Add active class to the current control button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+	
+  });
+}
+</script>
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Megu Cell</title>
+        <link href="file/style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <!-- Main Content -->
+        <main>
+             <h1>Megu Cell</h1>
+             <h3>Tempat HP termurah dan terbaik di bandung</h3>
+             <hr>
+             <br>
+
+            <!-- Header -->
+            <header class="header">
+                <ul class="topnav">
+                    <li><a href="">Beranda</a></li>
+                    <li><a href="">Kontak</a></li>
+                    <li><a href="">Tentang</a></li>
+                    <li class="icon">
+                        <a href="javascript:void(0);" onClick="myFunction()">☰</a>
+                    </li>
+                </ul>
+
+                 <script>
+                    /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+                    function myFunction() {
+                        document.getElementsByClassName("topnav")[0].classList.toggle("responsive");
+                    }
+                 </script>
+
+            </header>
+
+            <!-- Hero -->
+            <section class="hero">
+               <h2>PROMO!!</h2>
+                 <span class="responsive">
+                    <img src="file/promo.png" style="height:400px;">
+                 </span>
+            </section>
+
+            <div class="flex-container wrapper">
+
+                <!-- Content -->
+                <section class="content">
+                    <h2>PRODUK ANDALAN KAMI</h2>
+					<div id="myBtnContainer">
+  <button class="btn" id="bt" onClick="filterSelection('all')"> Show all</button>
+
+  
+  <button class="btn" onClick="filterSelection('xiaomi')"> Xiaomi</button>
+  <button class="btn" onClick="filterSelection('samsung')"> Samsung</button>
+  <button class="btn" onClick="filterSelection('realme')"> Realme</button>
+  
+  </div>
+  
+                  <p align="center" class="filterDiv xiaomi">
+                    
+                    <br> 
+                         Brand Xiaomi
+                        <span class="responsive">
+                           <table><tr>
+<td><h3>Xiaomi Redmi 2<img src="file/Xiaomi2.JPG" style="width:300px;height:200px;"><button type="button" class="button">Beli!</button></h3></td>
+<td><h3>Xiaomi Redmi Note 5<img src="file/Xiaomi3.JPG" style="width:300px;height:200px;"><button type="button" class="button">Beli!</button></h3></td>
+<td><h3>Xiaomi Redmi Note 7<img src="file/Xiaomi.JPG" style="width:300px;height:200px;"><button type="button" class="button">Beli!</button></h3></td>
+</tr></table>
+                              
+					
+                        </span>
+						
+                    </p>
+
+                   <p align="center" class="filterDiv samsung">
+                    
+                    <br> 
+                         Brand Samsung
+                        <span class="responsive">
+                           <table><tr>
+<td><h3>Samsung A10<img src="file/samsung10.JPG" style="width:300px;height:200px;"><button type="button" class="button">Beli!</button></h3></td>
+<td><h3>Samsung A9<img src="file/samsung19.JPG" style="width:300px;height:200px;"><button type="button" class="button">Beli!</button></h3></td>
+
+</tr></table>
+                              
+					
+                        </span>
+						
+                    </p>
+					<p align="center" class="filterDiv realme">
+                    
+                    <br> 
+                         Brand Realme
+                        <span class="responsive">
+                           <table><tr>
+<td><h3>Realme C12<img src="file/reame.JPG" style="width:300px;height:200px;"><button type="button" class="button">Beli!</button></h3></td>
+<td><h3>Realme 6<img src="file/realme6.JPG" style="width:300px;height:200px;"><button type="button" class="button">Beli!</button></h3></td>
+<td><h3>Realme 5<img src="file/realme5.JPG" style="width:300px;height:200px;"><button type="button" class="button">Beli!</button></h3></td>
+<td><h3>Realme 5 Pro<img src="file/realme5pro.JPG" style="width:300px;height:200px;"><button type="button" class="button">Beli!</button></h3></td>
+</tr></table>
+                              
+					
+                        </span>
+						
+                    </p>
+                </section>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <h2>Maps</h2>               
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31686.34804705959!2d107.5891928702311!3d-6.9152745802100855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e637c1c36e73%3A0x9253217aae9c858d!2sBandung%20Indah%20Plaza!5e0!3m2!1sid!2sid!4v1598513861610!5m2!1sid!2sid" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+				   <a>Jl. Merdeka No.56, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115</a>
+                </aside>
+            
+            </div>
+            
+            <!-- Footer -->
+            <footer class="footer">
+           
+                <p align="left">
+                    Kontak :  
+                    <br>
+                    <img src="file/wa.png" height="30px">
+                    <a href="https://wa.me/628522186009" style="color:white; cursor:pointer;">
+                    0852 2218 6009 
+                    </a>
+					 <br>
+                    <img src="file/fb.jpg" height="30px">
+                    <a href="facebook.com" style="color:white; cursor:pointer;">
+                    MeguCell21 
+                    </a>
+                    <br>
+                    <img src="file/email.png" height=" 20px">
+                    <a href="mailto:MeguCell@gmail.com" style="color:white; cursor:pointer;">
+                    MeguCell@gmail.com </a>
+                </p>
+
+                <h4>Copyright @2020 By MeguCell.</h4>
+            </footer>
+
+        </main>
+    
+</body></html>

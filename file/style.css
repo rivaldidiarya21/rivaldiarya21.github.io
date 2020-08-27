@@ -1,0 +1,173 @@
+main, header, section, aside, footer {
+    margin: 0;
+    padding: 20px;
+    border: 1px solid #000000;
+    color: #ffffff;
+}
+
+@media screen and (min-width: 640px){
+    .flex-container {
+        display: flex;
+    }    
+}
+
+.wrapper {
+    margin: auto;
+    max-width: 75rem;
+}
+
+main {
+    background: url(889584-snow-wallpaper.jpg);
+}
+
+.header {
+    background: #03a9f4;
+}
+
+.hero {
+    background: #d22b1f;
+}
+
+.content {
+    flex: 1;
+    background: #129a22;
+}
+
+.sidebar {
+    flex: 0 1 300px;
+    border: 1px solid #000000;
+    background: #673ab7;
+}
+
+.footer {
+    border: 1px solid #000000;
+    background: #616161;
+    text-align: center;
+}
+
+
+body {
+	background: url(889584-snow-wallpaper.jpg);
+	font-family: Tahoma;
+	font-size: 12px;
+}
+
+.responsive img {
+    max-width:100%;
+    width:100%;
+    height: auto;
+    display: block
+}
+
+h1, h2, h3, h6 {
+	text-align: center;
+	color: #white;
+}
+
+
+ /* Remove margins and padding from the list, and add a black background color */
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+/* Float the list items side by side */
+ul.topnav li {float: left;}
+
+/* Style the links inside the list items */
+ul.topnav li a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.topnav li a:hover {background-color: #111;}
+
+/* Hide the list item that contains the link that should open and close the topnav on small screens */
+ul.topnav li.icon {display: none;}
+
+/* Saat lebar layar kurang dari 680 pixel, sembunyikan semua menu item kecuali item 
+yang pertama yaitu("Home"). Tampilkan juga list item yang berisi link untuk membuka 
+menu yaitu (li.icon) 
+*/
+@media screen and (max-width:680px) {
+  ul.topnav li:not(:first-child) {display: none;}
+  ul.topnav li.icon {
+    float: right;
+    display: inline-block;
+  }
+}
+ 
+/* Class dengan nama "responsive" akan ditambahkan oleh JavaScript saat user mengklik icon. 
+   Munculnya Class ini akan mendisplay isi list menu
+*/
+@media screen and (max-width:680px) {
+  ul.topnav.responsive {position: relative;}
+  ul.topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left;
+  }
+}
+
+.container {
+  overflow: hidden;
+}
+
+.filterDiv {
+  display: none; /* Hidden by default */
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Add a light grey background on mouse-over */
+.btn:hover {
+  background-color: #ddd;
+}
+
+/* Add a dark background to the active button */
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+
+.button {
+  transition-duration: 0.4s;
+  background-color: #03a9f4;
+  font-size: 24px;
+}
+
+.button:hover {
+  background-color: #d22b1f; 
+  color: blue;
+}
+
+
